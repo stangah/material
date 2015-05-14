@@ -634,7 +634,23 @@ ul.methods > li:first-child > *:first-child {
   padding-top: 0;
 }
 
-/* Demo Workarounds */
+/* Styles for Windows High Contrast mode */
+@media screen and (-ms-high-contrast: active) {
+  a {
+    text-decoration: underline;
+  }
+  iframe, hljs pre {
+    border: 1px solid #fff;
+  }
+}
+
+/* ---------------------
+*  Demo Workarounds
+*
+*  Necessary for component demos that append DOM subtrees outside of the demo app.
+*  Because our docs build prepends CSS classes onto custom demo styles provided for developers,
+*  these styles are needed for the docs website.
+*/
 .autocomplete-custom-template li {
   border-bottom: 1px solid #ccc;
   height: auto;
@@ -656,12 +672,3 @@ ul.methods > li:first-child > *:first-child {
 }
 
 
-/* Styles for Windows High Contrast mode */
-@media screen and (-ms-high-contrast: active) {
-  a {
-    text-decoration: underline;
-  }
-  iframe, hljs pre {
-    border: 1px solid #fff;
-  }
-}
